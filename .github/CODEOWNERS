@@ -1,0 +1,17 @@
+# Beginner-safe CODEOWNERS scaffold.
+# Replace placeholder owners below with real GitHub usernames or teams as they are confirmed.
+#
+# Format examples:
+# - @username
+# - @org/team-name
+
+* @AstraLabs-Seneca/pioneer-maintainers
+
+/electronics/eps/ @AstraLabs-Seneca/eps-team
+/electronics/obc/ @AstraLabs-Seneca/obc-team
+/electronics/picosat/ @AstraLabs-Seneca/picosat-team
+/mechanical/ @AstraLabs-Seneca/mechanical-team
+/software/firmware/ @AstraLabs-Seneca/firmware-team
+/software/ground-station/ @AstraLabs-Seneca/software-team
+/docs/business/ @AstraLabs-Seneca/business-team
+/docs/marketing/ @AstraLabs-Seneca/marketing-team

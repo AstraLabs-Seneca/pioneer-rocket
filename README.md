@@ -54,9 +54,33 @@ pioneer-rocket/
 ## Getting Started
 
 1. Clone this repo: `git clone https://github.com/AstraLabs-Seneca/pioneer-rocket.git`
-2. Check the [Issues](https://github.com/AstraLabs-Seneca/pioneer-rocket/issues) tab for your assigned tasks
-3. Create a branch for your subsystem: `git checkout -b eps/your-feature`
-4. Commit with clear descriptions and push for review
+2. Read `docs/STUDENT_WORKFLOW.md` (this is the default process for all contributors)
+3. Pick one issue from the [Issues](https://github.com/AstraLabs-Seneca/pioneer-rocket/issues) tab
+4. Create a branch: `git checkout -b <subsystem>/<short-task-name>`
+5. Open a PR using the required checklist template
+
+## Student Quickstart
+
+- Use `Student Task` issue template for new tasks.
+- Use the PR checklist for every merge.
+- Keep each PR scoped to one issue.
+- Attach evidence (logs, screenshots, CAD exports, or outreach artifacts).
+
+## AI Copilot Quickstart
+
+- Repo AI entrypoint: `.ai/START_HERE.md`
+- Core behavior contract: `.ai/AGENT_BRAIN_CORE.md`
+- Multi-agent guardrails: `.ai/MULTI_AGENT_PROTOCOL.md`
+- Subsystem first-move guide: `.ai/TASK_ROUTER.md`
+- Student copy/paste prompt: `.ai/PROMPT_TEMPLATE.md`
+
+## Workflow Automation
+
+- `.github/workflows/pr-guard.yml` checks non-draft PRs for:
+  - linked issue (`Closes #...`, `Fixes #...`, or `Resolves #...`)
+  - non-empty `## Evidence` section
+- `.github/CODEOWNERS` is included as a scaffold for auto-review routing.
+  - Replace placeholder team names with real teams/usernames to enable reviewer auto-assignment.
 
 ## Branching Strategy
 

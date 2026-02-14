@@ -1,0 +1,63 @@
+name: Student Task
+description: Create a scoped task for any ASTRA subsystem
+title: "[TASK]: "
+labels: ["needs-triage"]
+body:
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - electronics-eps
+        - electronics-obc
+        - electronics-picosat
+        - mechanical
+        - software-firmware
+        - software-ground-station
+        - business-marketing
+        - docs
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing or broken?
+      placeholder: "Current state..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: done_definition
+    attributes:
+      label: Definition of Done
+      description: What must be true for this task to be complete?
+      placeholder: "- [ ] ...\n- [ ] ..."
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      placeholder: "YYYY-MM-DD"
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort
+      options:
+        - 30-60 min
+        - 1-2 hours
+        - 2-4 hours
+        - 4+ hours
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Add links to docs, files, or prior issues if relevant.
+      placeholder: "Links and file paths..."
