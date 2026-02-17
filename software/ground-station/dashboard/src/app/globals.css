@@ -1,0 +1,313 @@
+/* ── ASTRA Labs Starship Dashboard ────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-panel: #12121a;
+  --bg-panel-hover: #1a1a2e;
+  --accent-cyan: #00d4ff;
+  --accent-lime: #39ff14;
+  --accent-orange: #ff6b35;
+  --accent-red: #ff1744;
+  --accent-blue: #4488ff;
+  --text-primary: #e0e0e0;
+  --text-secondary: #8888aa;
+  --border: #2a2a3e;
+  --font: 'Space Grotesk', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font);
+  overflow-x: hidden;
+}
+
+/* ── Dashboard Shell ─────────────────────────────────── */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #14141e 0%, var(--bg-primary) 100%);
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.header-title span {
+  color: var(--accent-cyan);
+}
+
+/* ── Main Content ────────────────────────────────────── */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.rocket-panel {
+  position: relative;
+  border-right: 1px solid var(--border);
+  background: radial-gradient(ellipse at 50% 50%, #0f0f1a 0%, var(--bg-primary) 70%);
+  min-height: 300px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Mission Phase Bar ───────────────────────────────── */
+.mission-phase-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.phase-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  background: var(--bg-primary);
+  transition: all 0.3s ease;
+}
+
+.phase-active {
+  background: var(--bg-panel-hover);
+}
+
+/* ── Telemetry Charts ────────────────────────────────── */
+.telemetry-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.telemetry-chart {
+  flex: 1;
+  padding: 8px 16px 4px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+
+.chart-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+.chart-value {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-unit {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: 3px;
+}
+
+/* ── Bottom Bar ──────────────────────────────────────── */
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-panel);
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* ── Engine Status ───────────────────────────────────── */
+.engine-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.engine-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+.engine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.engine-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* ── Stats Bar ───────────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stat-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Sim Toggle ──────────────────────────────────────── */
+.sim-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.2s ease;
+}
+
+.sim-toggle:hover {
+  border-color: var(--accent-cyan);
+  background: var(--bg-panel-hover);
+}
+
+.sim-running {
+  border-color: var(--accent-lime);
+}
+
+.sim-paused {
+  border-color: var(--accent-orange);
+}
+
+.sim-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  transition: background 0.3s;
+}
+
+.sim-running .sim-indicator {
+  background: var(--accent-lime);
+}
+
+.sim-indicator.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.sim-mode-label {
+  text-transform: uppercase;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .rocket-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    min-height: 250px;
+    max-height: 40vh;
+  }
+
+  .mission-phase-bar {
+    justify-content: center;
+  }
+
+  .bottom-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stats-bar {
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
